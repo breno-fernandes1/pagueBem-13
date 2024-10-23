@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import './App.css';  
+import logo from './logo-pague-bem.png';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -19,66 +21,34 @@ function Login() {
   };
 
   return (
-    <div className="login-container" style={styles.container}>
+    <div className="login-container">
+      {/* Adiciona a imagem da logo */}
+      <img src={logo} alt="Logo Pague Bem" className="login-logo" />
       <h2>Login</h2>
-      <form onSubmit={handleLogin} style={styles.form}>
-        <div style={styles.inputGroup}>
+      <form onSubmit={handleLogin} className="login-form">
+        <div className="input-group">
           <label>Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={styles.input}
             placeholder="Digite seu email"
           />
         </div>
-        <div style={styles.inputGroup}>
+        <div className="input-group">
           <label>Senha</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            style={styles.input}
             placeholder="Digite sua senha"
           />
         </div>
-        {error && <p style={styles.error}>{error}</p>}
-        <button type="submit" style={styles.button}>Entrar</button>
+        {error && <p className="error-message">{error}</p>}
+        <button type="submit">Entrar</button>
       </form>
     </div>
   );
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '300px',
-  },
-  inputGroup: {
-    marginBottom: '15px',
-  },
-  input: {
-    width: '100%',
-    padding: '8px',
-    fontSize: '16px',
-  },
-  error: {
-    color: 'red',
-    marginBottom: '10px',
-  },
-  button: {
-    padding: '10px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
-};
 
 export default Login;
