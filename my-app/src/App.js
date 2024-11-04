@@ -1,10 +1,11 @@
 import logo from './logo.svg';
-import './App.css';
+
+import IndicePage from "./pages/indice/IndicePage"
 
 function App() {
   return (
     <div className="App">
-      ...
+      <IndicePage/>
     </div>
   );
 }
