@@ -1,17 +1,11 @@
 import React from 'react';
 import './App.css';
-import Login from './pages/login/login';
-import Home from './pages/home/home';
-import Header from './components/header/header';
-import Cadastro from './pages/cadastro/cadastro';
+import { AppRoutes } from './routes/router';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      {/* <Cadastro/> */}
-      <Login/>
-      {/* <Home/> */}
+      <AppRoutes />
     </div>
   );
 }
