@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import { NavLink } from "react-router";
 
 export const Container = styled.div`
     background-color: white;
     margin-top: 80px;
     border-radius: 25px;
-    box-shadow: 5px 5px #dadada;
     width: 85%;
     height: 75%;
     display: flex;
@@ -14,6 +14,8 @@ export const Container = styled.div`
 
 export const LogoContainer = styled.div`
     width: 35%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,11 +135,13 @@ export const ContainerText5 = styled.div`
 
 export const Text5 = styled.div`
     font-weight: lighter;
+    margin-right: 6px;
 `;
 
-export const Text6 = styled.div`
+export const Text6 = styled(NavLink)`
     color: #578F47;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover{
         color: #4b6942;

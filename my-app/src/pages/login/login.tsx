@@ -38,41 +38,43 @@ function Login() {
 
   return (
     <Layout>
-      <Container>
-        <LogoContainer>
-          <LoginLogo src={logo} alt="Logo Pague Bem" />
-          <Text1>SEJA BEM-VINDO</Text1>
-          <Text2>Para se manter conectado conosco, faça login com suas informações pessoais.</Text2>
-        </LogoContainer>
-        <LoginContainer>
-          <TitleLogin>Efetue seu login</TitleLogin>
-          <LoginForm onSubmit={handleLogin}>
-            <InputGroup>
-              <Inputs
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="E-mail"
-              />
-            </InputGroup>
-            <InputGroup>
-              <Inputs
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Senha"
-              />
-            </InputGroup>
-            {error && <ErrorMessage>{error}</ErrorMessage>}
-            <ButtonLogin type="submit">Entrar</ButtonLogin>
-            <Text4>Esqueci minha senha</Text4>
-            <ContainerText5>
-              <Text5>Não tem uma conta?</Text5>
-              <Text6>Registre-se aqui</Text6>
-            </ContainerText5>
-          </LoginForm>
-        </LoginContainer>
-      </Container>
+      <div className='flex flex-row align-items-center justify-content-center h-screen'>
+        <Container className='shadow-2'>
+          <LogoContainer>
+            <LoginLogo src={logo} alt="Logo Pague Bem" />
+            <Text1>SEJA BEM-VINDO</Text1>
+            <Text2>Para se manter conectado conosco, faça login com suas informações pessoais.</Text2>
+          </LogoContainer>
+          <LoginContainer>
+            <TitleLogin>Efetue seu login</TitleLogin>
+            <LoginForm onSubmit={handleLogin}>
+              <InputGroup>
+                <Inputs
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="E-mail"
+                />
+              </InputGroup>
+              <InputGroup>
+                <Inputs
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Senha"
+                />
+              </InputGroup>
+              {error && <ErrorMessage>{error}</ErrorMessage>}
+              <ButtonLogin type="submit">Entrar</ButtonLogin>
+              <Text4>Esqueci minha senha</Text4>
+              <ContainerText5>
+                <Text5>Não tem uma conta? </Text5>
+                <Text6 to={'/cadastro'}>Registre-se aqui</Text6>
+              </ContainerText5>
+            </LoginForm>
+          </LoginContainer>
+        </Container>
+      </div>
     </Layout>
   );
 }
