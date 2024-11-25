@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router";
 
 // Container principal do card
 export const CardContainer = styled.div`
@@ -84,7 +85,7 @@ export const Button = styled.button`
   }
 `;
 
-export const LoginLink = styled.a`
+export const LoginLink = styled(NavLink)`
   color: #578f47;
   text-decoration: none;
   font-weight: bold;
