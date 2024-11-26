@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { NavLink } from "react-router";
 
 // Container principal do card
@@ -22,18 +22,22 @@ export const FormBox = styled.div`
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Aumentando a sombra para mais destaque */
   border-radius: 15px; /* Bordas mais arredondadas */
   transition: box-shadow 0.3s ease-in-out; /* Suavizando a animação da sombra */
-  
+
   /* Efeito de hover para dar destaque quando o mouse passa sobre a caixa */
   &:hover {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
   }
 `;
 
-export const Typography = styled.h5<{ variant?: string; align?: string; gutterBottom?: boolean }>`
-  font-size: ${({ variant }) => (variant === 'h5' ? '26px' : '16px')};
+export const Typography = styled.h5<{
+  variant?: string;
+  align?: string;
+  gutterBottom?: boolean;
+}>`
+  font-size: ${({ variant }) => (variant === "h5" ? "26px" : "16px")};
   font-weight: bold;
-  text-align: ${({ align }) => (align === 'center' ? 'center' : 'left')};
-  margin-bottom: ${({ gutterBottom }) => (gutterBottom ? '20px' : '0')};
+  text-align: ${({ align }) => (align === "center" ? "center" : "left")};
+  margin-bottom: ${({ gutterBottom }) => (gutterBottom ? "20px" : "0")};
   color: #333; /* Cor mais suave para o texto */
 `;
 
@@ -62,10 +66,6 @@ export const FormControlLabel = styled.label`
   font-size: 15px;
   margin-top: 16px;
   color: #555; /* Texto de label mais suave */
-`;
-
-export const Checkbox = styled.input`
-  margin-right: 10px;
 `;
 
 export const Button = styled.button`
@@ -98,4 +98,3 @@ export const LoginLink = styled(NavLink)`
 export const SubmitContainer = styled.div`
   margin-top: 16px;
 `;
-
