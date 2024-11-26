@@ -17,10 +17,10 @@ const GraficoIndicePagamento: React.FC<IIGraficoIndicePagamento> = ({ indicePag,
     <ResponsiveContainer width="105%" height={500}>
       <ScatterChart
         margin={{
-          top: 120,
+          top: 50,
           right: 100,
           bottom: 50,
-          left: 100,
+          left: 70,
         }}
       >
         <CartesianGrid />

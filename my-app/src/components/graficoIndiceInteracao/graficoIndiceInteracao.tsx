@@ -17,17 +17,17 @@ const GraficoIndiceInteracao: React.FC<IIGraficoIndicePagamento> = ({ indiceInt,
       <BarChart
         data={dados}
         margin={{
-          top: 120,
+          top: 50,
           right: 100,
           bottom: 50,
-          left: 100,
+          left: 70,
         }}
         barCategoryGap={10}
         barGap={2}
       >
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid strokeDasharray="2 2" />
         <XAxis dataKey="devedor_id" />
-        <YAxis />
+        <YAxis dataKey="indice_interacao" />
         <Tooltip />
         <Legend />
         <Bar dataKey="indice_interacao" stackId="a" fill="#82ca9d" />

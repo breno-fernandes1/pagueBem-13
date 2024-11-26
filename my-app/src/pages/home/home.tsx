@@ -6,6 +6,7 @@ import { GraficoIndiceReputacao } from "../../components/graficoIndiceReputacao/
 import { ProgressSpinner } from "primereact/progressspinner";
 import { useHomeData } from "./useHomeData";
 import { GraficoIndiceInteracao } from "../../components/graficoIndiceInteracao/graficoIndiceInteracao";
+import { TituloGrafico } from "./homeStyle";
 
 const Home: React.FC = () => {
   const { dados, quantidadeClientes, setQuantidadeClientes } = useHomeData();
@@ -33,19 +34,23 @@ const Home: React.FC = () => {
             />
           </div>
           
-          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex align-items-center justify-content-center ml-3">
+          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex flex-column align-items-center justify-content-center ml-3">
+            <TituloGrafico>Indice de Interação</TituloGrafico>
             <GraficoIndiceInteracao indiceInt={dados.indiceInt} quantidadeClientes={quantidadeClientes} />
-          </div>
+          </div>  
 
-          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex align-items-center justify-content-center ml-3">
+          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex flex-column align-items-center justify-content-center ml-3">
+            <TituloGrafico>Indice de Regularidade</TituloGrafico>
             <GraficoIndiceRegularidade indiceReg={dados.indiceReg} quantidadeClientes={quantidadeClientes} />
           </div>
 
-          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex align-items-center justify-content-center ml-3">
+          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex flex-column align-items-center justify-content-center ml-3">
+            <TituloGrafico>Indice de Pagamento</TituloGrafico>
             <GraficoIndicePagamento indicePag={dados.indicePag} quantidadeClientes={quantidadeClientes} />
           </div>
 
-          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex align-items-center justify-content-center ml-3">
+          <div className="field col-12 xl:col-5 border-round-lg shadow-1 bg-white flex flex-column align-items-center justify-content-center ml-3">
+            <TituloGrafico>Indice de Reputação</TituloGrafico>
             <GraficoIndiceReputacao indiceRep={dados.indiceRep} quantidadeClientes={quantidadeClientes} />
           </div>
         </div>

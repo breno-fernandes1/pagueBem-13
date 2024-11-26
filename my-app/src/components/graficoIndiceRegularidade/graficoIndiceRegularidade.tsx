@@ -30,10 +30,10 @@ const GraficoIndiceRegularidade: React.FC<IGraficoIndiceRegularidadeProps> = ({ 
       <BarChart
         data={dados}
         margin={{
-          top: 120,
+          top: 50,
           right: 100,
           bottom: 50,
-          left: 100,
+          left: 70,
         }}
         barCategoryGap={10}
         barGap={2}

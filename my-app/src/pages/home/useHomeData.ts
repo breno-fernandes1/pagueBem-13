@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { httpClient } from "../../api/httpsClient";
 import { IIndicePagResponse } from "../../@types/IIndicePagResponse";
 import { IIndiceRegResponse } from "../../@types/IIndiceRegResponse";
 import { IIndiceRepResponse } from "../../@types/IIndiceRepResponse";
-import { httpClient } from "../../api/httpsClient";
 import { IIndiceIntResponse } from "../../@types/IIndiceIntResponse";
 
 interface IHomeData {

@@ -16,10 +16,10 @@ export const GraficoIndiceReputacao: React.FC<IGraficoIndiceReputacao> = ({ indi
       <LineChart
         data={dados}
         margin={{
-          top: 100,
+          top: 50,
           right: 100,
           bottom: 50,
-          left: 100,
+          left: 70,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
