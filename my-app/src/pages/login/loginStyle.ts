@@ -3,7 +3,6 @@ import { NavLink } from "react-router";
 
 export const Container = styled.div`
     background-color: white;
-    margin-top: 80px;
     border-radius: 25px;
     width: 85%;
     height: 75%;

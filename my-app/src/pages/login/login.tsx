@@ -65,7 +65,7 @@ function Login() {
 
   return (
     <Layout>
-      <div className="flex flex-row align-items-center justify-content-center h-screen">
+      <div className="flex flex-row align-items-center justify-content-center" style={{ height: '90vh' }}>
         <Container className="shadow-2">
           <LogoContainer>
             <LoginLogo src={logo} alt="Logo Pague Bem" />
