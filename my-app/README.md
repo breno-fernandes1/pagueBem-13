@@ -1,46 +1,128 @@
-# Getting Started with Create React App
+# 🌟 Pague Bem Brasil Frontend  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Pague Bem Logo](https://via.placeholder.com/150x80) <!-- Substitua pela URL do logo -->
 
-## Available Scripts
+## 🖥️ *Visão Geral*  
+O *Pague Bem Brasil Frontend* é uma solução digital para gestão de cobranças e organização de dívidas. Com uma interface moderna e interativa, a aplicação exibe indicadores analíticos, como índices de interação, regularidade, pagamento e reputação, ajudando credores e devedores a tomar decisões financeiras de forma eficiente e personalizada.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 *Principais Funcionalidades*  
+✨ *Gráficos Interativos*: Visualize índices como interação, regularidade, pagamento e reputação de forma clara e intuitiva.  
+🎨 *Interface Personalizada*: Componentes organizados para facilitar a navegação e a análise de dados.  
+🔗 *Integração com API*: Comunicação em tempo real com o backend para exibição de dados atualizados.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ *Tecnologias Utilizadas*  
+Este projeto utiliza um conjunto moderno de tecnologias para oferecer uma experiência fluida e escalável:  
 
-### `npm test`
+### *Frontend*  
+- *React*: Biblioteca principal para construção da interface.  
+- *React Router Dom*: Gerenciamento de rotas dinâmicas.  
+- *Material-UI (MUI)*: Componentes estilizados e acessíveis.  
+- *PrimeReact*: Elementos avançados para design interativo.  
+- *Recharts*: Criação de gráficos animados e responsivos.  
+- *Styled Components*: Estilização baseada em componentes.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### *Backend e Integração*  
+- *Axios*: Cliente HTTP para integração com APIs RESTful.  
 
-### `npm run build`
+### *Ferramentas Adicionais*  
+- *TypeScript*: Adição de tipagem estática para maior confiabilidade no desenvolvimento.  
+- *Jest e Testing Library*: Testes unitários e de integração.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📋 *Pré-requisitos*  
+Certifique-se de que seu ambiente possui as seguintes ferramentas instaladas:  
+- *Node.js*: Versão 16 ou superior.  
+- *npm*: Gerenciador de pacotes (incluído no Node.js).  
+- *Editor de Código*: Como Visual Studio Code (VS Code).  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚙️ *Configuração do Projeto*  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 1️⃣ *Clonar o Repositório*  
+No terminal, execute:  
+bash
+git clone https://github.com/breno-fernandes1/pagueBem-13-Front.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2️⃣ *Instalar Dependências*  
+Na raiz do projeto, execute:  
+bash
+npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### 3️⃣ *Configurar Variáveis de Ambiente*  
+O cliente HTTP já está configurado para a base da API:  
+javascript
+const httpClient = axios.create({
+  baseURL: 'https://paguebem-api.chacha.vps-kinghost.net/api',
+});
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4️⃣ *Executar o Projeto*  
+Para iniciar o ambiente de desenvolvimento, use:  
+bash
+npm start
+
+
+🚀 Após rodar este comando, o projeto será iniciado e estará disponível no seu navegador no endereço:
+http://localhost:3000
+
+Se o navegador não abrir automaticamente, copie e cole o link no seu navegador.
+
+
+
+### 5️⃣ *Compilar para Produção*  
+Para gerar uma versão otimizada do projeto:  
+bash
+npm run build
+
+
+---
+
+## 📂 *Estrutura do Projeto*  
+
+
+pague-bem-frontend/
+├── public/            # Arquivos estáticos (favicon, index.html)
+├── src/               # Código-fonte do projeto
+│   ├── components/    # Componentes reutilizáveis
+│   │   ├── cliente/   # Funções relacionadas a clientes
+│   │   ├── filtro/    # Componentes para filtragem
+│   │   ├── graficos/  # Componentes de gráficos
+│   │   ├── header/    # Cabeçalho do site
+│   │   ├── layout/    # Estrutura geral do layout
+│   ├── services/      # Configuração de integração com APIs
+│   │   └── api.ts     # Configuração do Axios
+│   ├── App.tsx        # Componente principal do aplicativo
+├── package.json       # Dependências e scripts do projeto
+├── .gitignore         # Arquivos ignorados pelo Git
+├── README.md          # Este arquivo
+
+
+---
+
+## 🌐 *Hospedagem e Implantação*  
+Para hospedar o projeto em plataformas como *Netlify* ou *Render*:  
+1. Compile os arquivos de produção com npm run build.  
+2. Faça o upload da pasta build para a plataforma de hospedagem.  
+3. Configure a URL base para o backend, se necessário.  
+
+---
+
+## 🛡️ *Suporte e Documentação*  
+Encontre ajuda:  
+- [Documentação React](https://reactjs.org/docs/getting-started.html)  
+- [Documentação Material-UI](https://mui.com/material-ui/getting-started/overview/)  
+- [Repositório GitHub](https://github.com/breno-fernandes1/pagueBem-13-Front)  
+
+📝 Contribuições são bem-vindas! Reporte issues ou envie pull requests diretamente no repositório.  
+
+---  
+
+💻 *Feito com ♥ pelo Squad 13 da Pague Bem.*
