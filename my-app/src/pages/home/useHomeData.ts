@@ -16,17 +16,16 @@ const useHomeData = () => {
   const [dados, setDados] = useState<IHomeData>({});
   const [quantidadeClientes, setQuantidadeClientes] = useState<number>(10);
   const [filtros, setFiltros] = useState({
-    devedorId: '',
+    devedorId: 'all',
     min: 0,
     max: 10,
   });
 
   const filtrarDados = (data: any[], field: string) => {
     const { min, max, devedorId } = filtros;
-
     return data
       .filter((item) => item[field] >= min && item[field] <= max)
-      .filter((item) => (devedorId === '' ? true : item.devedor_id === devedorId));
+      .filter((item) => (devedorId === 'all' || item.devedor_id === devedorId));
   };
 
   const getIndices = async () => {

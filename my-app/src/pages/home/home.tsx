@@ -21,7 +21,7 @@ const Home: React.FC = () => {
 
   const opcoes = [5, 10, 30, 50, 80, 120, 150, 200, 500, 700, 1000, 1107];
 
-  const [devedorId, setDevedorId] = useState<string | number>(''); 
+  const [devedorId, setDevedorId] = useState<string | number>('all'); 
   const [devedorIds, setDevedorIds] = useState<string[]>([]);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
               placeholder="Selecione um Devedor"
               className="w-full md:w-14rem"
               onChange={(e) => setFiltros({ ...filtros, devedorId: e.value })}
-              options={[{ label: "Todos", value: '' }, ...devedorIds.map(id => ({ label: `Devedor ${id}`, value: id }))]}
+              options={[{ label: "Todos", value: 'all' }, ...devedorIds.map(id => ({ label: `Devedor ${id}`, value: id }))]}
             />
           </div>
 
