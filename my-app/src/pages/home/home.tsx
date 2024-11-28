@@ -83,8 +83,8 @@ const Home: React.FC = () => {
               indiceReg={{
                 indices: filtrarDados(dados.indiceReg?.indices || [], "indice_regularidade"),
                 total_contas: dados.indiceReg?.total_contas || 0,
-                media_indice_regularidade: dados.indiceReg?.media_indice_regularidade || 0,
                 media_desvio_padrao: dados.indiceReg.media_desvio_padrao || 0,
+                media_indice_regularidade: dados.indiceReg?.media_indice_regularidade || 0,
               }} 
               quantidadeClientes={quantidadeClientes} 
               minValue={0}

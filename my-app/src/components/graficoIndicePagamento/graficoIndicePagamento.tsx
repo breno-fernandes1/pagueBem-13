@@ -1,7 +1,7 @@
 import { CartesianGrid, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis } from "recharts";
 import { IIndicePagResponse } from "../../@types/IIndicePagResponse";
-import { InputNumber } from "primereact/inputnumber"; // Para o InputNumber
 import { useState } from "react";
+import { Dropdown } from "primereact/dropdown";
 
 interface IIGraficoIndicePagamento {
   indicePag: IIndicePagResponse | undefined;
@@ -14,6 +14,8 @@ const GraficoIndicePagamento: React.FC<IIGraficoIndicePagamento> = ({ indicePag,
   const [min, setMin] = useState<number>(minValue);
   const [max, setMax] = useState<number>(maxValue);
 
+  const options = Array.from({ length: 11 }, (_, i) => i);
+
   const dados = indicePag?.contas
     ?.slice(0, quantidadeClientes)
     .filter((item) => item.indice_pagamento >= min && item.indice_pagamento <= max)
@@ -25,14 +27,24 @@ const GraficoIndicePagamento: React.FC<IIGraficoIndicePagamento> = ({ indicePag,
   return (
     <div>
       {/* Filtros para intervalo de valores */}
-      <div className="flex flex-row pt-3">
+      <div className="flex flex-row align-items-center justify-content-around pt-3">
         <div className="mr-2 pl-2">
           <label htmlFor="minValue">Valor mínimo</label>
-          <InputNumber value={min} onValueChange={(e) => setMin(e.value ?? 0)} min={0} max={10} />
+          <Dropdown
+            value={min}
+            options={options}
+            onChange={(e) => setMin(e.value)}
+            placeholder="Selecione o valor mínimo"
+          />
         </div>
         <div className="mr-2">
           <label htmlFor="maxValue">Valor máximo</label>
-          <InputNumber value={max} onValueChange={(e) => setMax(e.value ?? 10)} min={0} max={10} />
+          <Dropdown
+            value={max}
+            options={options}
+            onChange={(e) => setMax(e.value)}
+            placeholder="Selecione o valor máximo"
+          />
         </div>
       </div>
 
@@ -46,8 +58,8 @@ const GraficoIndicePagamento: React.FC<IIGraficoIndicePagamento> = ({ indicePag,
           }}
         >
           <CartesianGrid />
-          <XAxis type="number" dataKey="media_tempo_pagamento" name="Média de Tempo de Pagamento" unit="dias" />
-          <YAxis type="number" dataKey="indice_pagamento" name="Índice de Pagamento" unit="nota" />
+          <XAxis type="number" dataKey="devedor_id" name="Id do devedor" unit=" Id" />
+          <YAxis type="number" dataKey="indice_pagamento" name="Índice de Pagamento" unit=" nota" />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter name="Indice de Pagamento por Média de Tempo de Pagamento" data={dados} fill="#8884d8" />
         </ScatterChart>

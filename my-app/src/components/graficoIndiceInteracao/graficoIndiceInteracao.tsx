@@ -1,7 +1,7 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { InputNumber } from "primereact/inputnumber"; // Importando InputNumber
 import { useEffect, useState } from "react";
 import { IIndiceIntResponse } from "../../@types/IIndiceIntResponse";
+import { Dropdown } from "primereact/dropdown";
 
 interface IGraficoIndiceInteracaoProps {
   indiceInt: IIndiceIntResponse | undefined;
@@ -19,6 +19,8 @@ const GraficoIndiceInteracao: React.FC<IGraficoIndiceInteracaoProps> = ({
   const [min, setMin] = useState<number>(minValue || 0);
   const [max, setMax] = useState<number>(maxValue || 10);
 
+  const options = Array.from({ length: 11 }, (_, i) => i);
+
   const dados = indiceInt?.contas
     ?.slice(0, quantidadeClientes)
     .filter((item) => item.indice_interacao >= min && item.indice_interacao <= max)
@@ -30,14 +32,24 @@ const GraficoIndiceInteracao: React.FC<IGraficoIndiceInteracaoProps> = ({
   return (
     <div>
       {/* InputNumber para ajuste do intervalo */}
-      <div className="flex flex-row pt-3">
+      <div className="flex flex-row align-items-center justify-content-around pt-3">
         <div className="mr-2 pl-2">
           <label htmlFor="minValue">Valor mínimo</label>
-          <InputNumber value={min} onValueChange={(e) => setMin(e.value ?? 0)} min={0} max={10} />
+          <Dropdown
+            value={min}
+            options={options}
+            onChange={(e) => setMin(e.value)}
+            placeholder="Selecione o valor mínimo"
+          />
         </div>
         <div className="mr-2">
           <label htmlFor="maxValue">Valor máximo</label>
-          <InputNumber value={max} onValueChange={(e) => setMax(e.value ?? 10)} min={0} max={10} />
+          <Dropdown
+            value={max}
+            options={options}
+            onChange={(e) => setMax(e.value)}
+            placeholder="Selecione o valor máximo"
+          />
         </div>
       </div>
 
